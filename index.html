@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;0,900;1,400;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+      body {
+        font-family: "poppins", sans-serif;
+      }
+
+      #btn-alert {
+        border: none;
+        border-radius: 5px;
+        padding: 7px 10px;
+        background-color: rgb(132, 105, 227);
+        font-size: 1.3em;
+        color: #fff;
+        transition: 0.2s;
+        position: fixed;
+        left: 45%;
+        top: 45%;
+      }
+
+      #btn-alert:hover {
+        opacity: 0.8;
+      }
+
+      #btn-alert:focus {
+        outline: rgb(132, 105, 227) solid 4px;
+        outline-offset: 4px;
+      }
+
+      @media (max-width: 576px) {
+        #btn-alert {
+          left: 38%;
+        }
+      }
+    </style>
+    <title>Happy Birthday</title>
+  </head>
+
+  <body>
+    <figure>
+      <audio src="lagu.mp3" width="200" controls></audio>
+    </figure>
+
+    <button id="btn-alert" onclick="munculinAlert()">Klik Aku!</button>
+
+    <script>
+      async function munculinAlert() {
+        await Swal.fire("Hai Sayed");
+        await Swal.fire("Selamat Ulang Tahun Yaa");
+        await Swal.fire({
+          title: "selamat ulang tahun bestiekuu",
+          text: "Walaupun jaraknya kita jauh di hari ulang tahunnya sayed ini, saya doakan semoga sayed selalu dilancarkan segala urusannya, rezekinya, selalu diberi kesehatan, pokonya wish u all the best. Ndatau lagiii, ndatau berkata-kata hahaha.",
+          imageUrl: "image/1.jpeg",
+          imageWidth: 300,
+          imageHeight: 300,
+          imageAlt: "Gambar Ulang Tahun",
+        });
+        await Swal.fire({
+          title: "Suka atau Tidak Suka",
+          text: "Tolong Jawab yang Jujur Yaa",
+          icon: "question",
+          showDenyButton: true,
+          confirmButtonColor: "#3085d6",
+          confirmButtonText: "Suka Banget",
+          denyButtonText: `Gak Suka!`,
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire({
+              title: "Mission Success",
+              text: "Makasih Banyak teman azarku hehe 😍",
+              imageUrl: "image/2.jpg",
+              imageWidth: 300,
+              imageHeight: 300,
+              imageAlt: "Gambar Bahagia",
+            });
+          } else {
+            Swal.fire({
+              title: "Mission Failed",
+              text: "udah cape buat malah ga suka 😤",
+              imageUrl: "image/3.jpg",
+              imageWidth: 300,
+              imageHeight: 300,
+              imageAlt: "Gambar Sedih",
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
